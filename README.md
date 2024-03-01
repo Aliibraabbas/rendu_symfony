@@ -21,9 +21,9 @@ Pour télécharger et utiliser ce projet, veuillez suivre les étapes suivantes 
 
 4. Configurez votre base de données :
 
-    Ouvrez le fichier `.env` et configurez l'URL de votre base de données :
+    Configurez les variables d'environnement en copiant `.env`  vers `.env.local` et en ajustant les détails de connexion à la base de données 
     ```dotenv
-    DATABASE_URL=mysql://user:password@127.0.0.1:3306/db
+    DATABASE_URL="mysql://root:@127.0.0.1:3306/db_name?serverVersion=8.0.32&charset=utf8mb4"
     ```
 
 5. Créez la base de données :
@@ -41,7 +41,13 @@ Pour télécharger et utiliser ce projet, veuillez suivre les étapes suivantes 
     symfony serve
     ```
 
-8. Accédez à l'URL fournie par Symfony pour visualiser votre application dans le navigateur.
+8. Accédez à l'URL fournie par Symfony pour visualiser votre application dans le navigateur. ```http://localhost:8000 ```
+9. Pour vous connecter en tant qu'utilisateur normal :
+    - **e-mail :**test@gmail.com
+    - **Password :**password
+10. Pour vous connecter en tant qu'administrateur :
+    - **e-mail :**admin@gmail.com
+    - **Password :**admin1
 
 ## Sécurité du Site
 
@@ -64,10 +70,9 @@ Pour assurer la sécurité de votre site, veuillez suivre les bonnes pratiques s
       private $firstName;
   }
   
+  
 - **Contrôle d'Accès** : Utilisez access_control dans votre fichier security.yaml pour définir les règles d'accès basées sur les rôles des utilisateurs.
 
-
-security:
  ```
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
