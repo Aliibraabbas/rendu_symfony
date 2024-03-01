@@ -68,19 +68,22 @@ Pour assurer la sécurité de votre site, veuillez suivre les bonnes pratiques s
 
 
 security:
+ ```
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/profile, roles: ROLE_USER }
+        - { path: /register, roles: PUBLIC_ACCESS }
+   ```
         
 - **CUtilisation de Slug** : Pour éviter d'exposer des identifiants dans les URL, utilisez des slugs générés à partir des titres des entités.
 
 - **Échappement des Données** : Utilisez htmlspecialchars pour échapper les données provenant des utilisateurs avant de les afficher dans les vues pour prévenir les attaques XSS.
-
-
-public function setTitle($title)
-{
-    $this->title = htmlspecialchars($title);
-    return $this;
-}
+ ```
+    public function setTitle($title)
+        {
+            $this->title = htmlspecialchars($title);
+            return $this;
+        }
+ ```
 
 En suivant ces mesures de sécurité, vous pouvez renforcer la robustesse et la fiabilité de votre application Symfony.
