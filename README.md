@@ -43,11 +43,11 @@ Pour télécharger et utiliser ce projet, veuillez suivre les étapes suivantes 
 
 8. Accédez à l'URL fournie par Symfony pour visualiser votre application dans le navigateur. ```http://localhost:8000 ```
 9. Pour vous connecter en tant qu'utilisateur normal :
-    - **e-mail :**test@gmail.com
-    - **Password :**password
+    - username :test@gmail.com
+    - Password :password
 10. Pour vous connecter en tant qu'administrateur :
-    - **e-mail :**admin@gmail.com
-    - **Password :**admin1
+    - username :admin
+    - Password :admin1
 
 ## Sécurité du Site
 
