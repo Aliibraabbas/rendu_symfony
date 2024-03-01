@@ -1,0 +1,49 @@
+<style>
+    .custom-navbar {
+        background-color: #f8f9fa;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .navbar-brand:hover {
+        color: #0056b3;
+    }
+
+    .navbar-links {
+        display: flex;
+        gap: 10px;
+    }
+
+    .nav-link {
+        color: #495057;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .nav-link:hover {
+        color: #007bff;
+    }
+</style>
+
+<nav class="custom-navbar">
+    <a href="{{ path('app_product') }}" class="navbar-brand">Home</a>
+    <div class="navbar-links">
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a href="{{ path('app_logout') }}" class="nav-link">Logout</a>
+        {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('app_product') }}" class="nav-link">Create Product</a>
+        {% endif %}
+
+    </div>
+</nav>
